@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:08:38 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/15 16:06:41 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/26 11:57:48 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	nbr(int n, int i, char *s)
 			max = 1;
 			n++;
 		}
-		s[i] = '-';
+		s[0] = '-';
 		n = -n;
 	}
 	if (n >= 10)
-		nbr(n / 10, i + 1, s);
+		nbr(n / 10, i - 1, s);
 	if (max == 1)
 		s[i] = ((n % 10) + '1');
 	else
@@ -48,8 +48,10 @@ char	*ft_itoa(int n)
 		cpt++;
 		nb = nb / 10;
 	}
-	if (!(str = (char*)ft_memalloc(sizeof(char) * (cpt + 1))))
+	if (n <= 0)
+		cpt++;
+	if (!(str = (char*)ft_memalloc(sizeof(char) * (cpt))))
 		return (NULL);
-	nbr(n, 0, str);
+	nbr(n, cpt - 1, str);
 	return (str);
 }

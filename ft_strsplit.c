@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:45:38 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/15 15:49:06 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/22 12:06:12 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ char	**ft_loop(char **tab, char *str, int j, char c)
 		ccmot = 0;
 		while (str[i] != '\0' && str[i] == c)
 			i++;
-		while (str[i] != '\0' && str[i++] != c)
+		while (str[i] != '\0' && str[i] != c)
+		{
+			i++;
 			ccmot++;
+		}
 		if (ccmot && !(tab[j] = (char*)ft_memalloc(sizeof(char) * (ccmot))))
 			return (NULL);
 		x = -1;
@@ -75,7 +78,7 @@ char	**ft_strsplit(char const *s, char c)
 	j = 0;
 	if (s[0] == '\0')
 		return (NULL);
-	if (!(tab = (char**)malloc(sizeof(char*) * (ft_nstr(s, c) + 1))))
+	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (ft_nstr(s, c) + 1))))
 		return (NULL);
 	if (!(tab = ft_loop(tab, (char*)s, j, c)))
 		return (NULL);

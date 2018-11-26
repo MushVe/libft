@@ -6,11 +6,28 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:27:15 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/21 17:40:20 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/22 11:52:32 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		count(int cpt, int i, char const *s)
+{
+	while (s[i] != '\0')
+	{
+		cpt++;
+		i++;
+	}
+	if (i != 0)
+		i--;
+	while (cpt >= 0 && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+	{
+		i--;
+		cpt--;
+	}
+	return (cpt);
+}
 
 char	*ft_strtrim(char const *s)
 {
@@ -20,14 +37,10 @@ char	*ft_strtrim(char const *s)
 	char	*res;
 
 	i = 0;
-	cpt = 0;
-	while (s[i] != '\0' && s[i] == ' ' && s[i] == '\n' && s[i] == '\t')
+	while (s[i] != '\0' && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		i++;
 	start = i;
-	while (s[i++] != '\0')
-		cpt++;
-	while (s[--i] == ' ' && s[i] == '\n' && s[i] == '\t')
-		cpt--;
+	cpt = count(0, i, s);
 	if (!(res = (char*)ft_memalloc(sizeof(char) * (cpt + 1))))
 		return (NULL);
 	i = 0;
