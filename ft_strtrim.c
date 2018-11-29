@@ -6,13 +6,13 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 15:27:15 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/22 11:52:32 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/29 16:37:30 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count(int cpt, int i, char const *s)
+static int	count(int cpt, int i, char const *s)
 {
 	while (s[i] != '\0')
 	{
@@ -29,7 +29,7 @@ int		count(int cpt, int i, char const *s)
 	return (cpt);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	int		i;
 	int		cpt;

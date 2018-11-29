@@ -6,13 +6,13 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:08:38 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/26 11:57:48 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/28 17:56:50 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	nbr(int n, int i, char *s)
+static void	nbr(int n, int i, char *s)
 {
 	int	max;
 
@@ -29,13 +29,10 @@ void	nbr(int n, int i, char *s)
 	}
 	if (n >= 10)
 		nbr(n / 10, i - 1, s);
-	if (max == 1)
-		s[i] = ((n % 10) + '1');
-	else
-		s[i] = ((n % 10) + '0');
+	s[i] = (max == 1 ? ((n % 10) + '1') : ((n % 10) + '0'));
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		cpt;
@@ -50,7 +47,7 @@ char	*ft_itoa(int n)
 	}
 	if (n <= 0)
 		cpt++;
-	if (!(str = (char*)ft_memalloc(sizeof(char) * (cpt))))
+	if (!(str = ft_strnew(cpt)))
 		return (NULL);
 	nbr(n, cpt - 1, str);
 	return (str);

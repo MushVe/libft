@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 17:08:10 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/19 13:57:16 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/28 17:47:45 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(void const *s, int c, size_t n)
 {
-	int			i;
+	size_t		i;
 	char const	*str;
 
 	i = 0;

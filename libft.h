@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:13:11 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/26 15:24:58 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/29 17:50:42 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void				ft_putnbr(int nb);
 void				ft_putnbr_fd(int nb, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
+char				*ft_quicksort(char const *s, size_t len);
 char				*ft_strcat(char *dest, char const *src);
 char				*ft_strchr(char const *s, int c);
 void				ft_strclr(char *s);
@@ -66,12 +67,12 @@ void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, char const *src, size_t size);
-int					ft_strlen(char const *str);
+size_t				ft_strlen(char const *str);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strncat(char *dest, char const *src, size_t n);
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
-char				*ft_strncpy(char *dest, char*src, unsigned int n);
+char				*ft_strncpy(char *dest, char const *src, size_t n);
 int					ft_strnequ(char const *si, char const *s2, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strnstr(char const *str, char const *need, size_t len);

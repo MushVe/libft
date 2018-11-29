@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 18:13:08 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/15 18:14:23 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/28 17:31:10 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int	i;
-
-	i = -1;
-	while (s[++i] != '\0')
-		ft_putchar_fd(s[i], fd);
+	write(fd, s, ft_strlen(s));
 }

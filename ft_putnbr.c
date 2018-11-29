@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 11:32:29 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/09 13:30:01 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/28 17:52:51 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,5 @@ void	ft_putnbr(int nb)
 	}
 	if (nb >= 10)
 		ft_putnbr(nb / 10);
-	if (max == 1)
-		ft_putchar((nb % 10) + '1');
-	else
-		ft_putchar((nb % 10) + '0');
+	max == 1 ? ft_putchar((nb % 10) + '1') : ft_putchar((nb % 10) + '0');
 }

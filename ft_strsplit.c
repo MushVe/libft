@@ -6,13 +6,13 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 15:45:38 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/22 12:06:12 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/28 18:04:52 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nstr(char const *str, char c)
+static int	ft_nstr(char const *str, char c)
 {
 	int	nb;
 	int	res;
@@ -41,7 +41,7 @@ int		ft_nstr(char const *str, char c)
 	return (res);
 }
 
-char	**ft_loop(char **tab, char *str, int j, char c)
+static char	**ft_loop(char **tab, char *str, int j, char c)
 {
 	int	ccmot;
 	int	x;
@@ -70,12 +70,14 @@ char	**ft_loop(char **tab, char *str, int j, char c)
 	return (tab);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	int		j;
 	char	**tab;
 
 	j = 0;
+	if (!s)
+		return (NULL);
 	if (s[0] == '\0')
 		return (NULL);
 	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (ft_nstr(s, c) + 1))))

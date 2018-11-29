@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_ptrswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 17:00:57 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/28 18:01:47 by cseguier         ###   ########.fr       */
+/*   Created: 2018/11/29 17:01:24 by cseguier          #+#    #+#             */
+/*   Updated: 2018/11/29 18:30:51 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_ptrswap(char *a, char *b)
 {
-	char	*res;
-	size_t	i;
+	char	*c;
 
-	i = 0;
-	if (!(res = (char*)ft_memalloc(sizeof(char) * (len + 1))))
-		return (0);
-	while (len != i)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	*c = *b;
+	*b = *a;
+	*a = *c;
 }
+

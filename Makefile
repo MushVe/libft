@@ -6,7 +6,7 @@
 #    By: cseguier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 17:07:19 by cseguier          #+#    #+#              #
-#    Updated: 2018/11/26 12:27:46 by cseguier         ###   ########.fr        #
+#    Updated: 2018/11/28 17:26:15 by cseguier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,3 +49,5 @@ fclean: clean
 		/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
