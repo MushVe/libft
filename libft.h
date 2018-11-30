@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:13:11 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/29 17:50:42 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/11/30 13:36:55 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct		s_list
 
 int					ft_atoi(char *str);
 void				ft_bzero(void *s, size_t n);
+void				ft_foreach(int *tab, size_t lenght, void (*f)(int));
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
@@ -77,6 +78,7 @@ int					ft_strnequ(char const *si, char const *s2, size_t n);
 char				*ft_strnew(size_t size);
 char				*ft_strnstr(char const *str, char const *need, size_t len);
 char				*ft_strrchr(char const *s, int c);
+char				*ft_strrev(char const *str, size_t len);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strstr(char const *str, char const *need);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
