@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static int	ft_nstr(char const *str, char c)
+static int ft_nstr(char const *str, char c)
 {
-	int	nb;
-	int	res;
-	int	i;
+	int nb;
+	int res;
+	int i;
 
 	res = 0;
 	i = 0;
@@ -41,11 +41,11 @@ static int	ft_nstr(char const *str, char c)
 	return (res);
 }
 
-static char	**ft_loop(char **tab, char *str, int j, char c)
+static char **ft_loop(char **tab, char *str, int j, char c)
 {
-	int	ccmot;
-	int	x;
-	int	i;
+	int ccmot;
+	int x;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -58,7 +58,7 @@ static char	**ft_loop(char **tab, char *str, int j, char c)
 			i++;
 			ccmot++;
 		}
-		if (ccmot && !(tab[j] = (char*)ft_memalloc(sizeof(char) * (ccmot))))
+		if (ccmot && !(tab[j] = (char *)ft_memalloc(sizeof(char) * (ccmot))))
 			return (NULL);
 		x = -1;
 		while (ccmot > ++x)
@@ -70,19 +70,17 @@ static char	**ft_loop(char **tab, char *str, int j, char c)
 	return (tab);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char **ft_strsplit(char const *s, char c)
 {
-	int		j;
-	char	**tab;
+	int j;
+	char **tab;
 
 	j = 0;
 	if (!s)
 		return (NULL);
-	if (s[0] == '\0')
+	if (!(tab = (char **)ft_memalloc(sizeof(char *) * (ft_nstr(s, c) + 1))))
 		return (NULL);
-	if (!(tab = (char**)ft_memalloc(sizeof(char*) * (ft_nstr(s, c) + 1))))
-		return (NULL);
-	if (!(tab = ft_loop(tab, (char*)s, j, c)))
+	if (!(tab = ft_loop(tab, (char *)s, j, c)))
 		return (NULL);
 	return (tab);
 }
