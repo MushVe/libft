@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:30:00 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/19 13:35:41 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/05 18:39:07 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memmove(void *dest, void const *src, size_t n)
 	char const	*s;
 	char		*d;
 
-	if (dest == NULL || src == NULL)
-		return (NULL);
 	s = src;
 	d = dest;
 	if (d > s)

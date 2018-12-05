@@ -6,19 +6,17 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 12:10:20 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/09 12:12:23 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/05 13:45:33 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	if (!s)
-	{
-		return;
-	}
+		return ;
 	while (s[++i] != '\0')
 		s[i] = '\0';
 }

@@ -1,37 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_capitalize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 16:51:05 by cseguier          #+#    #+#             */
-/*   Updated: 2018/12/05 13:53:53 by cseguier         ###   ########.fr       */
+/*   Created: 2018/12/05 19:12:21 by cseguier          #+#    #+#             */
+/*   Updated: 2018/12/05 19:30:13 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnequ(char const *s1, char const *s2, size_t n)
+char	*ft_capitalize2(char *str)
 {
-	size_t	i;
+	int mot;
+	int i;
 
 	i = 0;
-	if (!s1 || !s2 || n == 0)
+	mot = 1;
+	while (str[i] != '\0')
 	{
-		if (!s1 && !s2)
-			return (0);
-		return (1);
-	}
-	if (s1[0] == '\0' && s2[0] == '\0')
-		return (1);
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
-	{
-		if (s1[i] != s2[i])
-			return (0);
+		if (!(ft_isalnum(str[i])))
+			mot = 1;
+		if (mot == 1 && ft_isalnum(str[i]))
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+				str[i] = str[i] - 32;
+			mot = 0;
+		}
 		i++;
 	}
-	if (s1[i] != s2[i] && (s1[i] == '\0' || s2[i] == '\0'))
-		return (0);
-	return (1);
+	return (str);
+}
+
+char	*ft_capitalize(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		i++;
+	}
+	str = ft_capitalize2(str);
+	return (str);
 }

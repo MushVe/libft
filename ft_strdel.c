@@ -6,18 +6,16 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 14:15:22 by cseguier          #+#    #+#             */
-/*   Updated: 2018/11/14 14:23:57 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/05 13:46:19 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
 	if (!as)
-	{
-		return;
-	}
+		return ;
 	free(*as);
 	*as = NULL;
 }
