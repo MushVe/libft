@@ -6,7 +6,7 @@
 #    By: cseguier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 17:07:19 by cseguier          #+#    #+#              #
-#    Updated: 2018/12/05 19:22:24 by cseguier         ###   ########.fr        #
+#    Updated: 2018/12/06 14:45:11 by cseguier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,11 @@ OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra
 
+CC = gcc
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		gcc -c $(CFLAGS) $(SRC)
 		ar rcs $(NAME) $(OBJ)
 
 clean:

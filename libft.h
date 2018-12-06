@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:13:11 by cseguier          #+#    #+#             */
-/*   Updated: 2018/12/05 19:03:42 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/06 14:43:22 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
-int				ft_atoi(char *str);
+int				ft_atoi(char const *str);
 void			ft_bzero(void *s, size_t n);
 char			*ft_capitalize(char *str);
 void			ft_foreach(int *tab, size_t lenght, void (*f)(int));
