@@ -6,7 +6,7 @@
 #    By: cseguier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 17:07:19 by cseguier          #+#    #+#              #
-#    Updated: 2018/12/06 14:45:11 by cseguier         ###   ########.fr        #
+#    Updated: 2018/12/12 17:31:34 by cseguier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,12 @@ CC = gcc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		ar rcs $(NAME) $(OBJ)
+		@ar rcs $(NAME) $(OBJ)
 
 clean:
-		/bin/rm -f $(OBJ)
+		@/bin/rm -f $(OBJ)
 
 fclean: clean
-		/bin/rm -f $(NAME)
+		@/bin/rm -f $(NAME)
 
 re: fclean all
