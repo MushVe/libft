@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:13:11 by cseguier          #+#    #+#             */
-/*   Updated: 2018/12/06 14:43:22 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/17 15:35:20 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void			ft_putstr_fd(char const *s, int fd);
 char			*ft_quicksort(char const *s, size_t len);
 int				ft_sqrt(int nb);
 char			*ft_strcat(char *dest, char const *src);
+char			*ft_strccpy(char *dest, char const *src, char c);
 char			*ft_strchr(char const *s, int c);
 void			ft_strclr(char *s);
 int				ft_strcmp(char const *s1, char const *s2);
