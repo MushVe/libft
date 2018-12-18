@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cseguier <cseguier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/17 15:30:20 by cseguier          #+#    #+#             */
-/*   Updated: 2018/12/18 17:25:06 by cseguier         ###   ########.fr       */
+/*   Created: 2018/12/18 16:59:32 by cseguier          #+#    #+#             */
+/*   Updated: 2018/12/18 17:14:13 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strccpy(char *dest, char const *src, char c)
+char	*ft_strcdup(char const *src, char c)
 {
-	int	i;
+	char	*s;
 
-	i = 0;
-	while (src[i] != c)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if	(!(s = (char*)ft_memalloc((sizeof(*s) * (ft_strlen(src) + 1)))))
+		return (0);
+	return (ft_strccpy(s, src, c));
 }
