@@ -6,7 +6,7 @@
 /*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 17:13:11 by cseguier          #+#    #+#             */
-/*   Updated: 2018/12/17 15:35:20 by cseguier         ###   ########.fr       */
+/*   Updated: 2018/12/18 16:33:07 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int nb);
 void			ft_putnbr_fd(int nb, int fd);
+void			ft_putnstr(char const *s, int n);
 void			ft_putstr(char const *s);
 void			ft_putstr_fd(char const *s, int fd);
 char			*ft_quicksort(char const *s, size_t len);
