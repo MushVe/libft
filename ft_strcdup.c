@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptrswap.c                                       :+:      :+:    :+:   */
+/*   ft_strcdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cseguier <cseguier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 17:01:24 by cseguier          #+#    #+#             */
-/*   Updated: 2019/01/07 16:59:04 by cseguier         ###   ########.fr       */
+/*   Created: 2018/12/18 16:59:32 by cseguier          #+#    #+#             */
+/*   Updated: 2019/01/07 16:16:17 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_ptrswap(char *a, char *b)
+char	*ft_strcdup(char const *src, char c)
 {
-	char	*c;
+	char	*s;
 
-	*c = *b;
-	*b = *a;
-	*a = *c;
+	if (!(s = (char*)ft_memalloc((sizeof(*s) * (ft_strlen(src) + 1)))))
+		return (0);
+	return (ft_strccpy(s, src, c));
 }

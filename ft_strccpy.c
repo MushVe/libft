@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptrswap.c                                       :+:      :+:    :+:   */
+/*   ft_strccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cseguier <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cseguier <cseguier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 17:01:24 by cseguier          #+#    #+#             */
-/*   Updated: 2019/01/07 16:59:04 by cseguier         ###   ########.fr       */
+/*   Created: 2018/12/17 15:30:20 by cseguier          #+#    #+#             */
+/*   Updated: 2018/12/18 18:21:00 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_ptrswap(char *a, char *b)
+char	*ft_strccpy(char *dest, char const *src, char c)
 {
-	char	*c;
+	int	i;
 
-	*c = *b;
-	*b = *a;
-	*a = *c;
+	i = 0;
+	while (src[i] != c)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
