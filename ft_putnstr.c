@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcdup.c                                       :+:      :+:    :+:   */
+/*   ft_putnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cseguier <cseguier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/18 16:59:32 by cseguier          #+#    #+#             */
-/*   Updated: 2019/01/07 16:16:17 by cseguier         ###   ########.fr       */
+/*   Created: 2018/12/18 16:25:45 by cseguier          #+#    #+#             */
+/*   Updated: 2018/12/18 16:32:41 by cseguier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcdup(char const *src, char c)
+void	ft_putnstr(char const *s, int n)
 {
-	char	*s;
-
-	if (!(s = (char*)ft_memalloc((sizeof(*s) * (ft_strlen(src) + 1)))))
-		return (0);
-	return (ft_strccpy(s, src, c));
+	write(1, s, n);
 }
